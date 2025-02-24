@@ -44,5 +44,5 @@ Repozitář k navazujícímu kurzu Pythonu
 ## Seznam kouču
 
 ```
-@tomato42 @ZelenyMartin @dslavicek @JKafka97 @ninabel @vanovap
+@tomato42 @ZelenyMartin @dslavicek @JKafka97 @ninabel @vanovap @OndraVagner
 ```
