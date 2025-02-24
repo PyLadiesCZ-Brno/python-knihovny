@@ -40,3 +40,9 @@ Repozitář k navazujícímu kurzu Pythonu
 * Po schválení PR (opravení úkolu) můžete PR zamergovat do branche `reseni`.
 
 ![Branching](branching.png)
+
+## Seznam kouču
+
+```
+@tomato42
+```
