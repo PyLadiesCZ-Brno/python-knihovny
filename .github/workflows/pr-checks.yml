@@ -1,0 +1,80 @@
+name: PR Checks
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - main
+
+jobs:
+  get-changed-files:
+    runs-on: ubuntu-latest
+    outputs:
+      tasks: ${{ steps.changed.outputs.tasks }}
+      tests: ${{ steps.changed.outputs.tests }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get changed Python files
+        id: changed
+        run: |
+          git fetch origin ${{ github.base_ref }}
+
+          files=$(git diff --name-only origin/${{ github.base_ref }} HEAD)
+          echo "Changed files:"
+          echo "$files"
+
+          tasks=$(echo "$files" | grep '06/tasks/.*\.py$' paste -sd " ")
+          echo "Changed tasks:"
+          echo "$tasks"
+          echo "tasks=$tasks" >> $GITHUB_OUTPUT
+
+          tests=$(echo "$files" | grep '06/tasks/.*\.py$' | sed 's|tasks/task|test|' | paste -sd " ")
+          echo "Corresponding tests:"
+          echo "$tests"
+          echo "tests=$tests" >> $GITHUB_OUTPUT
+
+  autopep8:
+    needs: get-changed-files
+    runs-on: ubuntu-latest
+    if: needs.get-changed-files.outputs.tasks != ''
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install autopep8
+        run: |
+          python -m pip install --upgrade pip
+          pip install autopep8
+
+      - name: Run autopep8 on changed files
+        run: |
+          autopep8 --max-line-length 120 --exit-code --diff ${{ needs.get-changed-files.outputs.tasks }}
+
+  pytest:
+    needs: get-changed-files
+    runs-on: ubuntu-latest
+    if: needs.get-changed-files.outputs.tests != ''
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+
+      - name: Run pytest for changed files
+        run: |
+          pytest ${{ needs.get-changed-files.outputs.tests }}
