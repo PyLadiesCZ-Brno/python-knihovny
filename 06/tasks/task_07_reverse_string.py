@@ -4,4 +4,4 @@ def reverse_string(s: str) -> str:
     """
     Vrátí obrácený řetězec.
     """
-
+    return s[::-1]
