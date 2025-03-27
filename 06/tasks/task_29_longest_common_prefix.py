@@ -5,15 +5,18 @@ def longest_common_prefix(strings: list[str]) -> str:
     Vrátí nejdelší společný prefix v seznamu řetězců.
     """
 
-    if not strings:  # in case when list of strings is empty
+    if not strings:
         return ""
 
-# set first word in "strings" as prefix
-    prefix = strings[0]
-    for word in strings[1:]:
-        while not word.startswith(prefix):
-            prefix = prefix[:-1]
-            if not prefix:
-                return ""
+    shortest_word = min(strings, key=len)
+    number_of_iteration = len(shortest_word)
+    prefix = ""
+
+    for i in range(number_of_iteration):
+        for word in strings:
+            if word[i] != shortest_word[i]:
+                return prefix
+
+        prefix += shortest_word[i]
 
     return prefix
