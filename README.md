@@ -10,11 +10,12 @@ Repozitář k navazujícímu kurzu Pythonu
 |    04 | 2025-03-10 | Luděk  | 2:30 h | Pandas                                   |
 |    05 | 2025-03-17 | Luděk  | 2:30 h | [SQL][sql]                               |
 |    06 | 2025-03-24 | Martin | 2:30 h | [GitHub a pull requesty][gh]             |
-|    07 | 2025-03-31 | Martin | 2:30 h | [Regulární výrazy][regexp]               |
+|    07 | 2025-03-31 | Martin | 2:30 h | [GitHub a pull requesty][gh] pokračování |
 |    08 | 2025-04-07 | Luděk  | 2:30 h | API                                      |
 |    09 | 2025-04-14 | Luděk  | 2:30 h | Webscraping (Selenium)                   |
 |       | 2025-04-21 |        |        | Velikonční pondělí                       |
 |    10 | 2025-04-28 | Luděk  | 2:30 h | Vizualizace                              |
+|    11 | 2025-05-05 | Martin | 2:30 h | [Regulární výrazy][regexp]               |
 
 [cykly]: https://kodim.cz/czechitas/uvod-do-progr-2/bonusy/cykly-2/cyklus-s-ciselnou-radou
 [params]: https://kodim.cz/czechitas/uvod-do-progr-2/bonusy/parametry-prikazove-radky/parametry
