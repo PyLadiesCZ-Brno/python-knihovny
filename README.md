@@ -17,7 +17,7 @@ Repozitář k navazujícímu kurzu Pythonu
 |    10 | 2025-04-28 | Luděk  | 2:30 h | [API][api]                               |
 |    11 | 2025-05-05 | Luděk  | 2:30 h | [Web scraping][webscraping]              |
 |    12 | 2025-05-12 | Ondra  |        | Objektově orientované programování       |
-|    13 | 2025-05-19 | Luděk  | 2:30 h | Vizualizace                              |
+|    13 | 2025-05-19 | Luděk  | 2:30 h | [Vizualizace][vizualizace]               |
 
 [cykly]: https://kodim.cz/czechitas/uvod-do-progr-2/bonusy/cykly-2/cyklus-s-ciselnou-radou
 [params]: https://kodim.cz/czechitas/uvod-do-progr-2/bonusy/parametry-prikazove-radky/parametry
@@ -27,6 +27,7 @@ Repozitář k navazujícímu kurzu Pythonu
 [sql]: https://dta-sql.streamlit.app/
 [api]: https://dta-api.streamlit.app/
 [webscraping]: https://dta-scraping.streamlit.app/
+[vizualizace]: https://dta-visual.streamlit.app/
 
 ## Odevzdávání úkolů
 
